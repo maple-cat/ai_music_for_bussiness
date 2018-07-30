@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    * {
+        font-family: "Microsoft YaHei";
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        vertical-align: middle;
+        text-align: left;
+
+        overflow: hidden;
+
+    }
+
+    #sidebar > li:hover > a {
+
+        background: white;
+
+    }
+
+    .content {
+
+        padding: 0;
+
+    }
+
+
+</style>
+{% end %}
+
+{% block content %}
+{% include 'grid.html' %}
+
+
+{#<div class="content-wrapper">#}
+
+<form action="" method="post">
+
+    <div class="form-group has-success ">
+        <label class="control-label" for="inputSuccess"><i class="fa fa-pencil"></i> 请输入关键字</label>
+        <input type="text" name="query" class="form-control input_text" id="inputSuccess"#}
+               placeholder="Enter ..."><br>
+
+        <span class="help-block"></span>
+
+        <button class="btn btn-success submit_button">提交</button>
+        <br>
+    </div>
+
+</form>
+
+{% for i in results %}
+
+<div class="modal-content">
+    <div class="modal-header sad">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span></button>
+        <span class="label label-success">歌手：{{ i['ArtistName'] }}</span>
+        <span class="label label-warning">专辑：{{ i['AlbumName'] }}</span>
+        <span class="label label-danger">标签：{{ i['Labels'] }}</span>
+
+        {#              <h4 class="modal-title">{{ i['SongName'] }}</h4>#}
+    </div>
+    <div class="modal-body">
+        <p>
+
+            <strong>歌词：</strong> {{ i['LyricText'] }}
+        </p>
+    </div>
+
+</div>
+<br>
+
+{% end %}
+
+
+{% end %}
+
+{% block js %}
+
+<script>
+    $('.submit_button').click(function () {
+
+
+
+        // var text = ;
+
+
+        $.post('http://127.0.0.1:8000/section1', {'lyrics': $('.input_text').val()}, function (data) {
+
+            var result = data['result'];
+            $('.panel-body').empty();
+            $('.panel-heading').removeClass('active');
+            for (x in result) {
+                // if (result[x][0]=''){}
+
+                $('.' + result[x]).addClass('active');
+
+                $('.panel-body.' + result[x]).append(result[x])
+
+            }
+
+
+        })
+
+
+    })
+
+
+</script>
+
+
+{% end %}
+
+
+
+
+

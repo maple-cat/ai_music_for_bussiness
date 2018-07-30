@@ -1,0 +1,1 @@
+ner_graph_pbtxt_path = 'ner_model/ner_graph.pbtxt'

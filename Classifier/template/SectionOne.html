@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    * {
+        font-family: "Microsoft YaHei";
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        vertical-align: middle;
+        text-align: left;
+
+        overflow: hidden;
+
+    }
+
+    #sidebar > li:hover > a {
+
+        background: white;
+
+    }
+
+    .content {
+
+        padding: 0;
+
+    }
+
+
+</style>
+{% end %}
+
+{% block content %}
+{% include 'grid.html' %}
+
+
+{#<div class="content-wrapper">#}
+
+{#    <form action="" method="post">#}
+
+        <div class="form-group has-success col-lg-6">
+            <label class="control-label" for="inputSuccess"><i class="fa fa-pencil"></i> 请输入歌词</label>
+{#            <input type="text" name="song_detail" class="form-control input_text" id="inputSuccess"#}
+{#                   placeholder="Enter ..." >#}<br>
+            <div class="form-group">
+
+                  <textarea class="form-control input_text" rows="5" name="song_detail" placeholder="Enter ..."></textarea>
+                <br>
+
+
+                </div>
+
+            <span class="help-block"></span>
+
+             <button class="btn btn-success submit_button" >提交</button>
+        </div>
+
+
+{#    </form>#}
+
+
+
+    <div class="form-group has-success col-lg-6">
+
+
+        <label class="control-label" for="inputSuccess">识别结果</label>
+
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+
+            {% for index,name in items.items() %}
+
+            <div class="panel panel-default">
+                <div class="panel-heading {{ name[0] }}" role="tab" id="heading{{ index }}" >
+                    <h4 class="panel-title">
+
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ index }}"
+                           aria-expanded="false" aria-controls="collapse{{ index }}" >
+                            {{ name[1] }}
+                        </a>
+
+                    </h4>
+                </div>
+                <div id="collapse{{ index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ index }}">
+                    <div class="panel-body {{ name[0] }}">
+
+                    </div>
+                </div>
+            </div>
+
+
+            {% end %}
+
+
+        </div>
+
+
+    </div>
+
+
+{#</div>#}
+
+
+
+
+{% end %}
+
+{% block js %}
+
+<script>
+     $('.submit_button').click(function () {
+
+
+
+            // var text = ;
+
+
+            $.post('http://127.0.0.1:8000/section1',{'lyrics':$('.input_text').val()},function (data) {
+
+                var result = data['result'];
+                $('.panel-body').empty();
+                 $('.panel-heading').removeClass('active');
+                for (x in result){
+                    // if (result[x][0]=''){}
+
+                        $('.'+result[x]).addClass('active');
+
+                        $('.panel-body.'+result[x]).append(result[x])
+
+                }
+
+
+            })
+
+
+
+
+
+
+        })
+
+
+
+</script>
+
+
+{% end %}
+
+
+
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AI MUSIC</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+         <link rel="shortcut icon" href="{{ static_url('base/images/msn.png') }}">
+
+    <link rel="shortcut icon" href="{{ static_url('base/images/logo.png') }}">
+    <link rel="stylesheet" href="{{ static_url('admin/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ static_url('fonts/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ static_url('ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ static_url('admin/dist/css/AdminLTE.min.css') }}">
+    <link rel="stylesheet" href="{{ static_url('admin/dist/css/skins/_all-skins.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('admin/plugins/datepicker/datepicker3.css') }}">
+
+    <link rel="stylesheet" href="{{ static_url('admin/plugins/fullcalendar/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{ static_url('admin/plugins/fullcalendar/fullcalendar.print.css') }}"
+          media="print">
+    <link rel="stylesheet" href="{{ static_url('admin/plugins/iCheck/flat/blue.css') }}">
+    <link rel="stylesheet" href="{{ static_url('music/css/music.css') }}">
+    <style>
+            *{
+                font-family:"Microsoft YaHei";
+            }
+            .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+                vertical-align:middle;
+                text-align:center;
+            }
+
+
+
+
+
+
+        </style>
+
+    </head>
+    {% block css %}
+
+    {% end %}
+    <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="" class="logo">
+                <span class="logo-mini"><img src="{{ static_url('base/images/msn.png') }}" style="height:40px;width:40px;"></span>
+                <span class="logo-lg" >AI MUSIC</span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">下拉菜单</span>
+                </a>
+{#             <a  style="position: absolute;right: 02rem;top: 1rem;font-size: large  " href="#" class="btn btn-default btn-flat" ><b>log out</b></a>#}
+
+            </nav>
+
+
+
+
+        </header>
+
+     <div class="content-wrapper">
+
+            {%block content%}
+
+            {%end%}
+    </div>
+{#        </div>#}
+
+       <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>版本</b> 2.0
+        </div>
+        <strong>版权 &copy; 2017-2018 归<a href="">Microsoft</a>.</strong> 所有
+    </footer>
+
+        <div class="control-sidebar-bg"></div>
+
+</div>
+
+<script src="{{ static_url('admin/plugins/jQuery/jQuery-2.2.0.min.js') }}"></script>
+<script src="{{ static_url('admin/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ static_url('admin/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ static_url('admin/plugins/fastclick/fastclick.js') }}"></script>
+<script src="{{ static_url('music/js/music.js') }}"></script>
+
+<script src="{{ static_url('admin/dist/js/app.min.js') }}"></script>
+<script src="{{ static_url('admin/dist/js/demo.js') }}"></script>
+<script src="//cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script src="{{ static_url('admin/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+<script src="{{ static_url('admin/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js') }}"
+        charset="UTF-8"></script>
+     <script src="{{ static_url('admin/dist/js/demo.js') }}"></script>
+    <script src="{{ static_url('admin/plugins/iCheck/icheck.min.js') }}"></script>
+
+
+
+
+{% block js %}{% end %}
+
+    </body>
+    </html>

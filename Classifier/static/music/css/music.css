@@ -1,0 +1,39 @@
+
+.input_text{
+
+    /*height: 200px;*/
+    border-radius: 5px;
+}
+
+
+.show_text{
+
+    height: 500px;
+    border-radius: 5px;
+    border: solid mediumseagreen 1px;
+    display: block;
+    background: white;
+
+
+}
+
+.active{
+
+    background-color: deepskyblue !important;
+
+
+}
+
+.content-wrapper{
+
+    background-color: #ecf0f5;
+    min-height: 100vh !important;
+
+}
+
+.submit_button{
+
+    position: absolute;
+    right: 10px;
+
+}
