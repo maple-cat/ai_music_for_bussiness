@@ -107,7 +107,8 @@ if __name__ == "__main__":
 
                       )
 
-    app.listen(8000)
+    http_server=HTTPServer(app)
+http_server.listen(8000)
 
-    IOLoop.current().start()
+    IOLoop.instance().start()
 
