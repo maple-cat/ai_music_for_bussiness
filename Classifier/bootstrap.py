@@ -68,7 +68,11 @@ class SectionThreeHandler(RequestHandler):
 
         a = requests.post(url, params={'wish': song_detail}).text
         results = json.loads(a)
-        self.render('SectionThree.html',results = results,song_detail = song_detail)
+        song_num = len(results)
+        if song_num==1:
+            song_num = '0'
+
+        self.render('SectionThree.html',results = results,song_detail = song_detail,song_num = song_num)
 
 
 
