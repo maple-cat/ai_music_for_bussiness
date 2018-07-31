@@ -93,7 +93,7 @@ if __name__ == "__main__":
         # 'cookie_secret': "asdasd",
         # 'xsrf_cokkies': True,
 
-        'debug': True
+        'debug': False
 
     }
 
