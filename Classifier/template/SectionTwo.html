@@ -106,7 +106,7 @@
     $('.submit_button').click(function () {
 
 
-        $.post('http://127.0.0.1/section2 ', {'query': $('.input_text').val()}, function (data) {
+        $.post('http://127.0.0.1:8000/section2 ', {'query': $('.input_text').val()}, function (data) {
 
             var result = data['result'];
             $('.panel-body').empty();

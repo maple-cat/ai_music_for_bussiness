@@ -80,36 +80,6 @@
 
 {% block js %}
 
-<script>
-    $('.submit_button').click(function () {
-
-
-
-        // var text = ;
-
-
-        $.post('http://127.0.0.1/section1', {'lyrics': $('.input_text').val()}, function (data) {
-
-            var result = data['result'];
-            $('.panel-body').empty();
-            $('.panel-heading').removeClass('active');
-            for (x in result) {
-                // if (result[x][0]=''){}
-
-                $('.' + result[x]).addClass('active');
-
-                $('.panel-body.' + result[x]).append(result[x])
-
-            }
-
-
-        })
-
-
-    })
-
-
-</script>
 
 
 {% end %}

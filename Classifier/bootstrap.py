@@ -64,7 +64,7 @@ class SectionThreeHandler(RequestHandler):
     def post(self):
         song_detail = self.get_argument('query')
 
-        url = 'http://stcazr-c56:8080/submit'
+        url = 'http://10.139.74.226:8080/submit'
 
         a = requests.post(url, params={'wish': song_detail}).text
         results = json.loads(a)
@@ -93,7 +93,7 @@ if __name__ == "__main__":
         # 'cookie_secret': "asdasd",
         # 'xsrf_cokkies': True,
 
-        'debug': False
+        'debug': True
 
     }
 
