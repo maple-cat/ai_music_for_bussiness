@@ -40,8 +40,10 @@
 
     <div class="form-group has-success ">
         <label class="control-label" for="inputSuccess"><i class="fa fa-pencil"></i> 请输入关键字</label>
-        <input type="text" name="query" class="form-control input_text" id="inputSuccess"#}
-               placeholder="Enter ..."><br>
+        <input type="text" name="query" class="form-control input_text" id="inputSuccess"
+               placeholder="{{ song_detail }}">
+
+        <br>
 
         <span class="help-block"></span>
 
@@ -57,6 +59,7 @@
     <div class="modal-header sad">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span></button>
+         <span class="label label-primary">歌曲：{{ i['SongName'] }}</span>
         <span class="label label-success">歌手：{{ i['ArtistName'] }}</span>
         <span class="label label-warning">专辑：{{ i['AlbumName'] }}</span>
         <span class="label label-danger">标签：{{ i['Labels'] }}</span>
