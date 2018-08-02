@@ -59,7 +59,7 @@ class SectionThreeHandler(RequestHandler):
     def get(self):
 
 
-        self.render("SectionThree.html",results = [],song_detail = '')
+        self.render("SectionThree.html",results = [],song_detail = '',song_num = '')
 
     def post(self):
         song_detail = self.get_argument('query')
